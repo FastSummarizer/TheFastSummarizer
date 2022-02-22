@@ -539,32 +539,28 @@ def delete_account():
 
 
     # App functions
-def read_article(file_name):
+def read_article(uploaded_file):
     """
     Function that reads a text file and returns a list of clean sentences.
     
     Parameters
     ----------
-    file_name : string
-        The name of the input text file (with his extension).
+    uploaded_file : Streamlit object
+        The uploaded file from Streamlit webapp.
 
     Returns
     -------
     sentences : list
         List of clean sentences.
 
-    """
-    file = open(file_name, "r")
-    filedata = file.readlines()
-    article = filedata[0].split(". ")
+    """ 
+    filedata = str(upload_file.read(), "utf-8")
+    article = filedata.split(". ")
     sentences = []
-
-    for sentence in article:
-        #print(sentence)
-        sentences.append(sentence.replace("[^a-zA-Z]", " ").split(" "))
-    sentences.pop() 
     
-    file.close()
+    for sentence in article:
+        sentences.append(sentence.replace("[^a-zA-Z]", " ").split(" "))
+    sentences.pop()
     
     return sentences
 
