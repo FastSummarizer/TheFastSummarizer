@@ -217,13 +217,13 @@ Here is the project pattern:
 
 * **How use The FastSummarizer? Click on the video below :point_down:**
 
-[![How use The FastSummarizer](image/use_fastsummarizer.PNG)](https://www.youtube.com/watch?v=YW8aLyyle1g)
+[![How use The FastSummarizer](use_fastsummarizer.PNG)](https://www.youtube.com/watch?v=YW8aLyyle1g)
 
 </br>
 
 * **To better understand the functionalities of the application watch the video below :point_down:**
 
-[![FastSummarizer functionalities](image/webapp_functionalities.PNG)](https://www.youtube.com/watch?v=zmv2V_6CyCA)
+[![FastSummarizer functionalities](webapp_functionalities.PNG)](https://www.youtube.com/watch?v=zmv2V_6CyCA)
 
 
 <a id='section07'></a>
