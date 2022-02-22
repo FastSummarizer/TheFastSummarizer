@@ -684,7 +684,8 @@ def generate_summary(uploaded_file, top_n):
     #print("Indexes of top ranked_sentence order are ", ranked_sentence)    
 
     for i in range(top_n):
-      summarize_text.append(" ".join(ranked_sentence[i][1]))
+	summarize_text.append(" ".join(ranked_sentence[i][1]))
+      #summarize_text.append(" ".join(ranked_sentence[i][1]))
     
     # Add a . at the end of the summary
     summarize_text.append(" ")
