@@ -554,7 +554,7 @@ def read_article(uploaded_file):
         List of clean sentences.
 
     """ 
-    filedata = str(upload_file.read(), "utf-8")
+    filedata = str(uploaded_file.read(), "utf-8")
     article = filedata.split(". ")
     sentences = []
     
@@ -640,7 +640,7 @@ def build_similarity_matrix(sentences, stop_words):
     return similarity_matrix
 
 
-def generate_summary(file_name, top_n):
+def generate_summary(uploaded_file, top_n):
     """
     This method will call all the other functions to keep our summarization 
     pipeline running. It takes 4 steps: 
@@ -654,8 +654,8 @@ def generate_summary(file_name, top_n):
 
     Parameters
     ----------
-    file_name : file
-        Input text file.
+    uploaded_file : Streamlit object
+        The uploaded file from Streamlit webapp.
     top_n : int
         Number of sentences to display in the summary.
 
@@ -670,7 +670,7 @@ def generate_summary(file_name, top_n):
     summarize_text = []
 
     # Step 1 - Read text anc split it
-    sentences =  read_article(file_name)
+    sentences =  read_article(uploaded_file)
 
     # Step 2 - Generate Similary Martix across sentences
     sentence_similarity_martix = build_similarity_matrix(sentences, stop_words)
@@ -998,7 +998,7 @@ elif choice == "LogIn":
                 length_choice = int(length_choice)
                 
                 if length_choice > 0:
-                    resumed_text = generate_summary(data, length_choice)
+                    resumed_text = generate_summary(upload_file, length_choice)
                     
                     st.markdown("<br/>", True)
                     st.markdown("<br/>", True)
